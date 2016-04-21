@@ -20,7 +20,7 @@ class Journey
   end
 
   def complete?
-  @journey.keys[0] == :entry_station && @journey.keys[1] == :exit_station
+    @journey.keys[0] == :entry_station && @journey.keys[1] == :exit_station
   end
 
   def fare

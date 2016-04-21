@@ -9,11 +9,17 @@ class JourneyLog
   end
 
   def start(entry_station)
-    @journeys << journey_class.new(entry_station)
+    @entry_station = entry_station
+    @journeys << {journey_class.new(@entry_station)}
   end
 
   def finish(exit_station)
-    @journeys << exit_station
+    @journeys << { @entry_station => exit_station }
+
+  end
+
+  def journeys
+    @journeys.dup
   end
 
 private
