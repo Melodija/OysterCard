@@ -12,11 +12,11 @@ class Journey
   end
 
   def entry_station(station)
-    @journey[:entry_station] = station
+    @journey << {:entry_station => station}
   end
 
   def exit_station(station)
-    @journey[:exit_station] = station
+    @journey{:exit_station => station}
   end
 
   def complete?
